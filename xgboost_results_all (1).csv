@@ -1,0 +1,44 @@
+State,MAE,RMSE,MAPE(%)
+Alabama,0.01,0.01,3.71
+Arizona,0.0,0.0,1.64
+Arkansas,0.0,0.0,3.74
+California,0.03,0.04,3.46
+Colorado,0.01,0.01,3.39
+Connecticut,0.0,0.0,1.72
+Florida,0.04,0.05,5.25
+Georgia,0.01,0.01,3.42
+Illinois,0.01,0.02,3.44
+Indiana,0.01,0.01,3.16
+Iowa,0.0,0.0,2.84
+Kansas,0.0,0.0,0.9
+Kentucky,0.01,0.01,3.53
+Louisiana,0.01,0.01,4.96
+Maine,0.0,0.0,3.79
+Maryland,0.0,0.01,1.75
+Massachusetts,0.0,0.01,2.1
+Michigan,0.01,0.01,1.79
+Minnesota,0.0,0.0,1.25
+Mississippi,0.0,0.0,2.61
+Missouri,0.0,0.01,2.47
+Nebraska,0.0,0.0,2.06
+Nevada,0.0,0.0,3.26
+New Hampshire,0.0,0.0,2.57
+New Mexico,0.0,0.0,5.47
+New York,0.01,0.02,1.91
+North Carolina,0.02,0.02,4.06
+Ohio,0.01,0.01,3.25
+Oklahoma,0.01,0.01,4.56
+Oregon,0.0,0.0,2.36
+Pennsylvania,0.01,0.01,1.85
+Rhode Island,0.0,0.0,2.06
+South Carolina,0.01,0.01,4.61
+South Dakota,0.0,0.0,4.36
+Tennessee,0.01,0.01,3.03
+Texas,0.05,0.05,4.85
+Utah,0.0,0.0,2.53
+Vermont,0.0,0.0,2.61
+Virginia,0.01,0.01,4.42
+Washington,0.0,0.0,1.42
+West Virginia,0.0,0.0,3.31
+Wisconsin,0.0,0.0,1.09
+Wyoming,0.0,0.0,4.59

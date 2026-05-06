@@ -1,0 +1,44 @@
+State,Model,MAPE(%)
+Vermont,SARIMA,0.38
+Kansas,XGBoost,0.9
+Washington,SARIMA,0.97
+Wisconsin,XGBoost,1.09
+Minnesota,XGBoost,1.25
+Arizona,XGBoost,1.64
+Wyoming,SARIMA,1.69
+Connecticut,XGBoost,1.72
+Maryland,XGBoost,1.75
+Michigan,XGBoost,1.79
+Pennsylvania,XGBoost,1.85
+Oregon,SARIMA,1.86
+New York,XGBoost,1.91
+Utah,SARIMA,2.02
+Iowa,SARIMA,2.05
+Rhode Island,XGBoost,2.06
+Nebraska,XGBoost,2.06
+Massachusetts,XGBoost,2.1
+West Virginia,SARIMA,2.25
+Tennessee,SARIMA,2.44
+Nevada,SARIMA,2.44
+Missouri,XGBoost,2.47
+Indiana,SARIMA,2.55
+New Hampshire,XGBoost,2.57
+Mississippi,XGBoost,2.61
+Oklahoma,SARIMA,2.8
+Illinois,SARIMA,3.06
+South Dakota,SARIMA,3.1
+Maine,SARIMA,3.11
+Alabama,SARIMA,3.16
+Colorado,SARIMA,3.17
+California,SARIMA,3.24
+Virginia,SARIMA,3.25
+Ohio,XGBoost,3.25
+Georgia,XGBoost,3.42
+Kentucky,SARIMA,3.42
+Arkansas,XGBoost,3.74
+South Carolina,SARIMA,3.83
+North Carolina,XGBoost,4.06
+Texas,SARIMA,4.14
+New Mexico,SARIMA,4.33
+Florida,SARIMA,4.52
+Louisiana,SARIMA,4.92
