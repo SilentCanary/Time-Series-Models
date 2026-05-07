@@ -42,8 +42,11 @@ BEST_CSV  = os.path.join(ROOT, "best_model_per_state.csv")
 best_models_df = pd.read_csv(BEST_CSV)
 best_models    = dict(zip(best_models_df["State"], best_models_df["Model"]))
 
-# Pre-load last known values for XGBoost recursive inference
-_raw_train = pd.read_csv(os.path.join(DATA_DIR, "train_data.csv"), parse_dates=["Date"])
+# Pre-load full history (train + val) so inference lag features are up to date
+_raw_train = pd.concat([
+    pd.read_csv(os.path.join(DATA_DIR, "train_data.csv"), parse_dates=["Date"]),
+    pd.read_csv(os.path.join(DATA_DIR, "val_data.csv"),   parse_dates=["Date"]),
+], ignore_index=True).sort_values(["State", "Date"]).reset_index(drop=True)
 
 FEATURE_COLS_XGB = [
     "Year", "Month", "WeekOfYear", "DayOfWeek", "IsHoliday",
@@ -55,7 +58,7 @@ FEATURE_COLS_LSTM = [
     "Rolling_Mean_7", "Rolling_Std_7", "Rolling_Mean_30",
     "Year", "Month", "WeekOfYear", "DayOfWeek", "IsHoliday",
 ]
-SEQ_LEN = 8
+SEQ_LEN = 12   # must match seq_len used in lstm_data_builder.py
 
 
 # ── FastAPI app ───────────────────────────────────────────────────────────────
@@ -166,9 +169,10 @@ def _lstm_predict(state: str, n_weeks: int) -> List[float]:
     import tensorflow as tf
 
     lstm_dir      = os.path.join(MODEL_DIR, "lstm")
+    lstm_scalar_dir=os.path.join(DATA_DIR,"models")
     model_path    = os.path.join(lstm_dir, f"lstm_{state}.h5")
-    feat_scaler   = joblib.load(os.path.join(lstm_dir, f"feat_scaler_{state}.pkl"))
-    target_scaler = joblib.load(os.path.join(lstm_dir, f"target_scaler_{state}.pkl"))
+    feat_scaler   = joblib.load(os.path.join(lstm_scalar_dir, f"feat_scaler_{state}.pkl"))
+    target_scaler = joblib.load(os.path.join(lstm_scalar_dir, f"target_scaler_{state}.pkl"))
 
     model = tf.keras.models.load_model(model_path, compile=False)
 

@@ -6,9 +6,10 @@ print("=== Creating FINAL Best Model Selection ===")
 sarima = pd.read_csv('../sarima_results.csv')
 xgboost = pd.read_csv('../xgboost_results_all (1).csv')
 prophet = pd.read_csv('../prophet_results_all.csv')
+lstm=pd.read_csv('../lstm_results.csv')
 
 # Standardize MAPE column name
-for df in [sarima, xgboost, prophet]:
+for df in [sarima, xgboost, prophet,lstm]:
     if 'MAPE' in df.columns and 'MAPE(%)' not in df.columns:
         df.rename(columns={'MAPE': 'MAPE(%)'}, inplace=True)
 
@@ -16,9 +17,10 @@ for df in [sarima, xgboost, prophet]:
 sarima['Model'] = 'SARIMA'
 xgboost['Model'] = 'XGBoost'
 prophet['Model'] = 'Prophet'
+lstm['Model']='LSTM'
 
 # Combine all
-all_results = pd.concat([sarima, xgboost, prophet], ignore_index=True)
+all_results = pd.concat([sarima, xgboost, prophet,lstm], ignore_index=True)
 
 # Select the BEST model for each state (lowest MAPE)
 best_per_state = all_results.loc[all_results.groupby('State')['MAPE(%)'].idxmin()]
@@ -27,7 +29,7 @@ best_per_state = all_results.loc[all_results.groupby('State')['MAPE(%)'].idxmin(
 best_per_state = best_per_state[['State', 'Model', 'MAPE(%)']].sort_values('MAPE(%)').reset_index(drop=True)
 
 print("\n🎯 FINAL BEST MODEL PER STATE (Top 15):")
-print(best_per_state.head(15))
+print(best_per_state.head(42))
 
 print("\n" + "="*50)
 print("SUMMARY")

@@ -16,29 +16,29 @@ Utah,SARIMA,2.02
 Iowa,SARIMA,2.05
 Rhode Island,XGBoost,2.06
 Nebraska,XGBoost,2.06
-Massachusetts,XGBoost,2.1
+Massachusetts,LSTM,2.06
 West Virginia,SARIMA,2.25
-Tennessee,SARIMA,2.44
+North Carolina,LSTM,2.28
+Oklahoma,LSTM,2.34
+California,LSTM,2.41
 Nevada,SARIMA,2.44
+Tennessee,SARIMA,2.44
 Missouri,XGBoost,2.47
 Indiana,SARIMA,2.55
 New Hampshire,XGBoost,2.57
 Mississippi,XGBoost,2.61
-Oklahoma,SARIMA,2.8
+Florida,LSTM,2.61
+Virginia,LSTM,2.63
+Kentucky,LSTM,2.7
+Georgia,LSTM,2.74
+South Carolina,LSTM,2.74
+Arkansas,LSTM,2.87
+Ohio,LSTM,2.9
+Maine,LSTM,2.93
+South Dakota,LSTM,3.0
 Illinois,SARIMA,3.06
-South Dakota,SARIMA,3.1
-Maine,SARIMA,3.11
+Texas,LSTM,3.14
 Alabama,SARIMA,3.16
 Colorado,SARIMA,3.17
-California,SARIMA,3.24
-Virginia,SARIMA,3.25
-Ohio,XGBoost,3.25
-Georgia,XGBoost,3.42
-Kentucky,SARIMA,3.42
-Arkansas,XGBoost,3.74
-South Carolina,SARIMA,3.83
-North Carolina,XGBoost,4.06
-Texas,SARIMA,4.14
-New Mexico,SARIMA,4.33
-Florida,SARIMA,4.52
-Louisiana,SARIMA,4.92
+Louisiana,LSTM,3.31
+New Mexico,LSTM,3.8
