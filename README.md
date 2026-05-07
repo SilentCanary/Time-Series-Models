@@ -13,9 +13,10 @@ Forecast **next 8 weeks** of Beverage sales for each state using historical data
 
 | Model      | Selected For   | Avg MAPE |
 |------------|----------------|----------|
-| **SARIMA**     | 24 states      | **3.09%** |
-| **XGBoost**    | 19 states      | **3.05%** |
-| Prophet        | -              | 8.42%    |
+| **SARIMA**     | 13 states      | **3.09%** |
+| **XGBoost**    | 14 states      | **3.05%** |
+| Prophet        | -              | 8.42%     |
+| LSTM           | 16 states      | **2.90%** |
 
 **Best model automatically selected per state** based on lowest MAPE on validation data.
 
@@ -31,6 +32,7 @@ TIM SERIES/
 │   └── XGBOOST_1/              # Alternate XGBoost run
 │       ├── scaler_lstm.pkl
 │       └── scaler_xgboost.pkl
+|    ├── lstm/                  #lstm model 
 │
 ├── preprocess/                 # Data preprocessing & analysis
 │   ├── analysis.py
@@ -40,6 +42,7 @@ TIM SERIES/
 │   ├── train_test_split.py
 │   ├── cleaned_sales_data.csv
 │   ├── featured_sales_data.csv
+|   ├── lstm_data_builder.py
 │   ├── train_data.csv
 │   ├── val_data.csv
 │   ├── Figure_1.png
@@ -86,7 +89,7 @@ curl -X POST "http://127.0.0.1:8000/predict" -H "Content-Type: application/json"
 
 - ✅ Missing dates & values handling
 - ✅ Full Feature Engineering (lags, rolling, time, holidays)
-- ✅ SARIMA, Prophet, XGBoost
+- ✅ SARIMA, Prophet, XGBoost , LSTM
 - ✅ Automatic best model selection per state
 - ✅ Production-ready FastAPI
 - ✅ Clean project structure
